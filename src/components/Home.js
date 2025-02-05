@@ -27,7 +27,7 @@ function Home() {
           </p>
         </div>
         <div className="home-right">
-          <img src="/public/zaki.jpg" alt="Muhammad Zaki" className="profile-photo" />
+          <img src="zaki.jpg" alt="Muhammad Zaki" className="profile-photo" />
         </div>
         <Link to="/contact">
             <button className="contact-button">Hubungi Saya</button>
