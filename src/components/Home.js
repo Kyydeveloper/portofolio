@@ -27,7 +27,7 @@ function Home() {
           </p>
         </div>
         <div className="home-right">
-          <img src="zaki.jpg" alt="Muhammad Zaki" className="profile-photo" />
+          <img src={`${process.env.PUBLIC_URL}/zaki.jpg`} alt="Zaki" className="profile-photo"/>
         </div>
         <Link to="/contact">
             <button className="contact-button">Hubungi Saya</button>
