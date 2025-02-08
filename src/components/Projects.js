@@ -1,42 +1,66 @@
 import React from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./Whatsap";
-const pageVariants = {
-  initial: { opacity: 0, x: "-100vw" },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: "100vw" },
+const projects = [
+  {
+    title: "Proyek 1",
+    image: "/images/project1.jpg",
+    link: "https://example.com/project1",
+    description: "Ini adalah proyek pertama saya.",
+  },
+  {
+    title: "Proyek 2",
+    image: "/images/project2.jpg",
+    link: "https://example.com/project2",
+    description: "Ini adalah proyek kedua saya.",
+  },
+  {
+    title: "Proyek 3",
+    image: "/images/project3.jpg",
+    link: "https://example.com/project3",
+    description: "Ini adalah proyek ketiga saya.",
+  },
+];
+
+const ProjectCard = ({ title, image, link, description }) => {
+  return (
+    <motion.div
+      className="project-card"
+      whileHover={{ scale: 1.05 }} 
+      whileTap={{ scale: 0.95 }} 
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <img src={image} alt={title} className="project-image" />
+      </a>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </motion.div>
+  );
 };
-function Projects() {
+
+const Projects = () => {
   return (
     <motion.section
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.5 }}
-      id="project"
+      className="projects-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      <h1>My Projects</h1>
-      <ul className="projects">
-        <li>
-          <h3>Project 1</h3>
-          <p>A description of the first project.</p>
-        </li>
-        <li>
-          <h3>Project 2</h3>
-          <p>A description of the second project.</p>
-        </li>
-        <li>
-          <h3>Project 3</h3>
-          <p>A description of the third project.</p>
-        </li>
-      </ul>
+      <h1 className="section-title">My Projects</h1>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </div>
       <WhatsAppButton
         phoneNumber="6285211759216"
         message="Halo,Saya tertarik Dengan layanan Anda"
       />
     </motion.section>
   );
-}
+};
 
 export default Projects;

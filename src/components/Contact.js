@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./Whatsap";
 
-const pageVariants = {
-  initial: { opacity: 0, x: "-100vw" },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: "100vw" },
-};
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,12 +14,10 @@ function Contact() {
 
   return (
     <motion.section
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.5 }}
       id="contact"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <h1>Contact Me</h1>
       <form onSubmit={handleSubmit}>

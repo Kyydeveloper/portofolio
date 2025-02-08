@@ -1,20 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "./Whatsap";
-const pageVariants = {
-  initial: { opacity: 0, x: "-100vw" },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: "100vw" },
-};
+
 function Skills() {
   return (
     <motion.section
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.5 }}
       className="skills"
+       initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <h1>My Skills</h1>
       <div className="myskill">
