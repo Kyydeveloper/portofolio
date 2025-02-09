@@ -16,6 +16,7 @@ function App() {
         <main style={{ flex: 1 }}>
           <Header />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
