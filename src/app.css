@@ -116,17 +116,17 @@ header{
  text-align: left
 }
 .home-left h1{
-    font-size: 38px;
-   
+    font-size: 38px; 
 }
 .home-left p{
-    font-size: 18px;
-    
+    font-size: 18px;   
 }
 .home-right {
-  flex: 1;
-  justify-content:center;
-  align-items: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 15px;
 }
 .profile-photo {
  width:300px;
@@ -136,26 +136,39 @@ header{
 }
 .contact-button{
  flex: 1;
+ background-color: #007bff;
  padding: 10px;
- border-radius: 10px;  background-color:  rgb(8, 57, 234);
- color: #0e0d0d;
+ border-radius: 10px;
+ box-shadow: 0px 4px 10px rgba(244, 10, 10, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+  cursor: pointer;
 }
 .contact-button:hover{
-    background-color: rgb(67, 130, 207);
+    background-color: rgb(10, 49, 96);
+     box-shadow: 0px 8px 20px rgba(193, 27, 27, 0.4); 
+    transform: translateY(-5px);
 }
 .whatsapp-button {
   position: fixed;
-  bottom:120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  top:600px;
   right:10px;
-  font-size: 40px;  
-  color: rgb(4, 72, 32);
+  font-size: 35px;
+  padding: 1px;
+  background-color: #0bbb14;  
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: rgb(237, 240, 238);
+  border-radius: 50%;
   text-decoration: none;
   transition: transform 0.3s ease;
-  z-index: 1000;
-  display: inline-block;
 }
 .whatsapp-button:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 .about{
   margin:78px 15px;
@@ -340,10 +353,11 @@ footer a:hover {
   }
   .contact-button{
     padding: 10px;
+    font-size: 20px;
     border-radius: 10px;
     position: absolute;
-    bottom:190px;
-    left:320px;
+    top:490px;
+    right:490px;
   }
   section {
     padding: 20px;
@@ -415,12 +429,13 @@ footer a:hover {
     border-radius: 50%;
     border-style:groove ;
   }
-   .contact-button{
-    padding: 20px;
-    border-radius: 20px;
+  .contact-button{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
     position: absolute;
-    bottom:170px;
-    left:280px;
+    top:400px;
+    right:940px;
   }
   .about{
     margin-top: 100px;

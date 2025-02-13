@@ -19,12 +19,10 @@ function Home() {
         </div>
         <div className="home-right">
           <img src={`${process.env.PUBLIC_URL}/zaki.jpg`} alt="Zaki" className="profile-photo"/>
-
-
-        </div>
-        <Link to="/contact">
+       <Link to="/contact">
             <button className="contact-button">Hubungi Saya</button>
-          </Link>
+        </Link>
+        </div>
       <WhatsAppButton
         phoneNumber="6285211759216"
         message="Halo,Saya tertarik Dengan layanan Anda"
