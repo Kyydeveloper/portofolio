@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import WhatsAppButton from "./Whatsap";
-
+import emailjs from "emailjs-com"; 
+import WhatsAppButton from "./Whatsap"; 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,7 +9,32 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Your message has been sent!");
+
+    const templateParams = {
+      from_name: name, 
+      from_email: email,
+      message: message, 
+      to_name: "Admin_website", 
+    };
+
+    emailjs
+      .send(
+        "service_6o2x5jr",  
+        "template_t05lkek", 
+        templateParams,
+        "O5DsBHDIkk0tw33Ji"   
+      )
+      .then((response) => {
+        alert("Pesan berhasil dikirim! ✅");
+        console.log("Sukses:", response);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        alert("Gagal mengirim pesan ❌, coba lagi.");
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -27,6 +52,7 @@ function Contact() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div>
@@ -35,6 +61,7 @@ function Contact() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div>
@@ -42,6 +69,7 @@ function Contact() {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            required
           ></textarea>
         </div>
         <button className="send-btn" type="submit">
@@ -50,7 +78,7 @@ function Contact() {
       </form>
       <WhatsAppButton
         phoneNumber="6285211759216"
-        message="Halo,Saya tertarik Dengan layanan Anda"
+        message="Halo, Saya tertarik dengan layanan Anda!"
       />
     </motion.section>
   );

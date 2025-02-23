@@ -107,7 +107,7 @@ header{
   justify-content: center;
   align-items: center;
   margin:78px 15px;
-  gap: 10px;
+  gap: 7px;
   color: rgb(248, 245, 245);
 }
 .home-left{
@@ -126,7 +126,7 @@ header{
  flex-direction: column;
  justify-content: center;
  align-items: center;
- gap: 15px;
+ gap: 20px;
 }
 .profile-photo {
  width:300px;
@@ -155,12 +155,12 @@ header{
   align-items: center;
   width: 45px;
   height: 45px;
-  top:600px;
+  top:530px;
   right:10px;
   font-size: 35px;
   padding: 1px;
   background-color: #0bbb14;  
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: rgb(237, 240, 238);
   border-radius: 50%;
   text-decoration: none;
@@ -181,11 +181,13 @@ header{
 }
 .about p{
  font-size: 18px;
+ margin-left: 10px;
 }
 .skills{
   display: flex;
   flex-direction: column;
   margin:78px 15px;
+  gap: 20px;
   color: white;
 }
 .skills h1 {
@@ -194,7 +196,7 @@ header{
 }
 .myskill {
   display: flex;
-  padding: 10px;
+  margin-left: 20px;
   flex-direction: column;
   justify-content: space-between;
   gap: 50px
@@ -203,30 +205,31 @@ header{
     font-size: 20px;
 }
 .skills li {
-    font-size: 15px;
+  font-size: 13px;
   list-style-type: none;
 }
 .projects-container {
   display: flex;
   flex-direction: column;
   margin:78px 15px;
+  gap: 20px;
 }
 .section-title {
   font-size:38px;
   color: white;
-  margin-bottom: 25px;
+  
 }
 .projects-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
 }
 .project-card {
   background: #fff;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 10px rgba(197, 22, 22, 0.2);
   width: 150px;
   text-align: center;
   transition: all 0.3s ease-in-out;
@@ -240,6 +243,7 @@ header{
 }
 .project-card:hover .project-image {
   transform: scale(1.5);
+   box-shadow: 0px 4px 10px rgba(197, 22, 22, 0.2);
 }
 #contact{
   margin:80px 25px;
@@ -302,13 +306,13 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media (min-width:768px) and (max-width: 1024px){
+@media (min-width:768px) and (max-width: 1019px){
   .desktop-nav {
     display: block;
   }
   .social-links ul {
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
   }
   .desktop-nav ul {
     display: flex;
@@ -331,12 +335,12 @@ footer a:hover {
     display: none;
   }
   .home {
-    margin-top: 150px;
+    margin-top: 130px;
     padding: 40px 20px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
   }
   .home-left {
     text-align: center;
@@ -344,7 +348,7 @@ footer a:hover {
   }
   .home-right {
     flex: 1;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .profile-photo {
     width: 350px;
@@ -357,7 +361,7 @@ footer a:hover {
     border-radius: 10px;
     position: absolute;
     top:490px;
-    right:490px;
+    left: 120px;
   }
   section {
     padding: 20px;
@@ -381,7 +385,7 @@ footer a:hover {
    margin-left: 60px;
   }
 } 
-@media (min-width: 1025px) {
+@media (min-width: 1020px) {
   .desktop-nav {
     display: block;
   }
@@ -433,9 +437,9 @@ footer a:hover {
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     top:400px;
-    right:940px;
+   left: 280px;
   }
   .about{
     margin-top: 100px;
@@ -463,5 +467,9 @@ footer a:hover {
   }
   form {
     margin-left: 80px;
+  }
+  .whatsapp-button {
+    right: 0;
+    top: 500px;
   }
 }
