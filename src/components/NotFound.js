@@ -7,7 +7,6 @@ function Header() {
 
   const sidebarRef = useRef(null);
   const hamburgerRef = useRef(null);
-
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
@@ -79,7 +78,6 @@ function Header() {
                   href="https://www.instagram.com/mhd.zaki13"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -89,7 +87,6 @@ function Header() {
                   href="https://www.facebook.com/M%20Zaki"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon"
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -99,7 +96,6 @@ function Header() {
                   href="https://www.tiktok.com/@kopites_13"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon"
                 >
                   <i className="fab fa-tiktok"></i>
                 </a>
@@ -108,11 +104,7 @@ function Header() {
           </div>
 
           {isMobile && (
-            <div
-              className="hamburger"
-              onClick={toggleSidebar}
-              ref={hamburgerRef}
-            >
+            <div className="hamburger" onClick={toggleSidebar}>
               <span>&#9776;</span>
             </div>
           )}
@@ -120,10 +112,7 @@ function Header() {
       </div>
 
       {isMobile && (
-        <div
-          className={`sidebar ${isSidebarOpen ? "open" : ""}`}
-          ref={sidebarRef}
-        >
+        <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
           <ul>
             <li>
               <Link to="/home">Home</Link>

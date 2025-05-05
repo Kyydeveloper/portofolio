@@ -1,6 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaNodeJs } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaPython,
+  FaNodeJs,
+} from "react-icons/fa";
 import { SiCanva } from "react-icons/si";
 import WhatsAppButton from "./Whatsap";
 
@@ -23,9 +30,7 @@ const skillList = [
   },
   {
     title: "Desain",
-    skills: [
-     { name: "Canva", icon: <SiCanva color="#00c4cc" /> }
-    ],
+    skills: [{ name: "Canva", icon: <SiCanva color="#00c4cc" /> }],
   },
 ];
 

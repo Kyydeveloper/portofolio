@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com"; 
-import WhatsAppButton from "./Whatsap"; 
+import emailjs from "emailjs-com";
+import WhatsAppButton from "./Whatsap";
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,18 +11,18 @@ function Contact() {
     e.preventDefault();
 
     const templateParams = {
-      from_name: name, 
+      from_name: name,
       from_email: email,
-      message: message, 
-      to_name: "Admin_website", 
+      message: message,
+      to_name: "Admin_website",
     };
 
     emailjs
       .send(
-        "service_6o2x5jr",  
-        "template_t05lkek", 
+        "service_6o2x5jr",
+        "template_t05lkek",
         templateParams,
-        "O5DsBHDIkk0tw33Ji"   
+        "O5DsBHDIkk0tw33Ji"
       )
       .then((response) => {
         alert("Pesan berhasil dikirim! ✅");
