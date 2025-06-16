@@ -121,10 +121,6 @@ header {
 .sidebar ul li a:hover {
   color: #007bff;
 }
-
-.social-links ul {
-  display: flex;
-}
 .home {
   display: flex;
   flex-direction: column;
@@ -158,19 +154,23 @@ header {
   border-style: groove;
 }
 .contact-button {
-  flex: 1;
   background-color: #007bff;
-  padding: 10px;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(244, 10, 10, 0.2);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
 }
+
 .contact-button:hover {
-  background-color: rgb(10, 49, 96);
-  box-shadow: 0px 8px 20px rgba(193, 27, 27, 0.4);
-  transform: translateY(-5px);
+  background-color: #0056b3;
+  box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-3px);
 }
+
 .whatsapp-button {
   position: fixed;
   display: flex;
@@ -197,14 +197,19 @@ header {
   margin: 78px 15px;
   color: rgb(248, 245, 245);
 }
-.about h1 {
-  font-size: 38px;
-  margin-bottom: 5px;
-}
 .about p {
   font-size: 18px;
-  margin-left: 10px;
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.8;
 }
+.about h1 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+}
+
 .skills {
   display: flex;
   flex-direction: column;
@@ -235,10 +240,11 @@ header {
 }
 
 .myskill {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  justify-items: center;
 }
 
 .skill-category {
@@ -248,21 +254,60 @@ header {
   box-shadow: 0 14px 12px rgba(224, 14, 14, 0.1);
   transition: all 0.3s ease;
 }
+.skill-category:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
 
 .skill-category h3 {
   margin-bottom: 1rem;
 }
-
 .skill-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0.5rem 0;
+  gap: 10px;
+  margin: 8px 0;
 }
 
 .skill-item .icon {
   font-size: 1.5rem;
+}
+
+.skill-item .name {
+  font-size: 14px;
+  color: black; /* ganti ke warna kontras karena background putih */
+  font-weight: 500;
+}
+.certificates {
+  margin: 80px 15px;
+  color: white;
+}
+
+.certificates h1 {
+  font-size: 38px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.certificate-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.certificate-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  max-width: 250px;
+}
+
+.certificate-card img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .projects-container {
@@ -325,24 +370,33 @@ form {
   margin: 0 auto;
 }
 form div {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 form label {
   display: block;
   margin-bottom: 3px;
+  color: #ccc;
+  font-weight: bold;
 }
-form input {
-  width: 100%;
-  padding: 5px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-}
+form input,
 form textarea {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   margin: 5px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
+  background-color: #111;
+  color: white;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 #contact .send-btn {
   background-color: #4caf50;
   color: white;

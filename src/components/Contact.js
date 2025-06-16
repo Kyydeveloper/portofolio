@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import WhatsAppButton from "./Whatsap";
+
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,14 +26,14 @@ function Contact() {
         "O5DsBHDIkk0tw33Ji"
       )
       .then((response) => {
-        alert("Pesan berhasil dikirim! ✅");
+        alert("✅ Pesan berhasil dikirim!");
         console.log("Sukses:", response);
         setName("");
         setEmail("");
         setMessage("");
       })
       .catch((error) => {
-        alert("Gagal mengirim pesan ❌, coba lagi.");
+        alert("❌ Gagal mengirim pesan, coba lagi.");
         console.error("Error:", error);
       });
   };
@@ -44,38 +45,46 @@ function Contact() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h1>Contact Me</h1>
+      <h1 className="section-title">Contact Me</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
+          <label htmlFor="name">Name:</label>
           <input
+            id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            placeholder="Masukkan nama Anda"
           />
         </div>
         <div>
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
+            id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            placeholder="Masukkan email Anda"
           />
         </div>
         <div>
-          <label>Message:</label>
+          <label htmlFor="message">Message:</label>
           <textarea
+            id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
+            rows="5"
+            placeholder="Tulis pesan Anda di sini..."
           ></textarea>
         </div>
         <button className="send-btn" type="submit">
-          Send Message
+          Kirim Pesan
         </button>
       </form>
+
       <WhatsAppButton
         phoneNumber="6285211759216"
         message="Halo, Saya tertarik dengan layanan Anda!"

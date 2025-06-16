@@ -12,31 +12,38 @@ function About() {
     >
       <h1>About Me</h1>
       <p>
-        Halo, saya Muhammad Zaki, seorang mahasiswa Teknik informatika dengan
-        spesialisasi di bidang pengembangan web. Sejak memulai perjalanan saya
-        di dunia teknologi, saya telah mengasah keterampilan dalam berbagai
-        teknologi web seperti <b>HTML, CSS, JavaScript, dan Python</b>. Saya
-        juga berpengalaman dalam menggunakan framework
-        <b> React.js dan Node.js</b>, yang memungkinkan saya untuk membangun
-        aplikasi web dinamis dan interaktif. Sebagai seseorang yang selalu
-        bersemangat untuk belajar hal baru, saya tidak hanya fokus pada
-        pengembangan web, tetapi juga memiliki ketertarikan besar dalam
-        <b> Desain grafis</b>. Dengan keterampilan desain, saya dapat
-        menciptakan antarmuka yang menarik dan ramah pengguna untuk aplikasi
-        atau situs web yang saya bangun. Saya percaya bahwa kombinasi antara
-        kemampuan teknis dan desain yang baik sangat penting untuk menciptakan
-        pengalaman pengguna yang luar biasa. Dengan pemahaman yang kuat dalam
-        pengembangan <i> front-end</i> dan <i>back-end</i>, serta keterampilan
-        desain yang mendalam, saya siap untuk mengambil tantangan dalam
-        menciptakan solusi teknologi yang inovatif. Tujuan saya adalah untuk
-        terus mengembangkan keterampilan saya di dunia pengembangan perangkat
-        lunak dan desain agar dapat berkontribusi dalam proyek-proyek yang
-        memberikan dampak positif pada masyarakat, sambil terus memperluas
-        wawasan saya dalam dunia teknologi yang terus berkembang.
+        Halo, saya <b>Muhammad Zaki</b>, seorang mahasiswa Teknik Informatika
+        dengan minat dan fokus utama dalam pengembangan web modern.
       </p>
+      <p>
+        Sejak awal mengenal dunia teknologi, saya telah mengasah keterampilan di
+        berbagai teknologi seperti <b>HTML, CSS, JavaScript, dan Python</b>.
+        Saya juga terbiasa menggunakan framework populer seperti <b>React.js</b>{" "}
+        dan <b>Node.js</b> untuk membangun aplikasi web yang interaktif dan
+        responsif.
+      </p>
+      <p>
+        Selain itu, saya juga memiliki ketertarikan besar dalam{" "}
+        <b>Desain Grafis</b>. Saya percaya bahwa desain yang baik merupakan
+        elemen penting untuk menciptakan antarmuka yang menarik dan ramah
+        pengguna. Dengan kemampuan ini, saya dapat menyelaraskan fungsionalitas
+        teknis dan tampilan visual dalam setiap proyek yang saya kerjakan.
+      </p>
+      <p>
+        Dengan pemahaman yang seimbang antara <i>front-end</i> dan{" "}
+        <i>back-end</i>, serta keterampilan desain yang mumpuni, saya siap
+        mengambil tantangan untuk menciptakan solusi teknologi yang inovatif dan
+        berdampak positif.
+      </p>
+      <p>
+        Tujuan saya adalah terus berkembang dalam dunia{" "}
+        <b>pengembangan perangkat lunak</b> dan desain, serta berkontribusi
+        dalam proyek-proyek yang membawa manfaat nyata bagi masyarakat luas.
+      </p>
+
       <WhatsAppButton
         phoneNumber="6285211759216"
-        message="Halo,Saya tertarik Dengan layanan Anda"
+        message="Halo, Saya tertarik dengan layanan Anda"
       />
     </motion.section>
   );

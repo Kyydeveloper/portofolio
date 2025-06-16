@@ -37,33 +37,31 @@ const skillList = [
 function Skills() {
   return (
     <motion.section
-      className="skills"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      className="projects-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      <h1>My Skills</h1>
-      <div className="myskill">
+      <h1 className="section-title">My Skills</h1>
+
+      <div className="projects-grid">
         {skillList.map((category, index) => (
           <motion.div
             key={index}
-            className="skill-category"
+            className="project-card"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <h3>{category.title}</h3>
             <ul>
               {category.skills.map((skill, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="skill-item"
-                >
+                <li key={i} className="skill-item">
                   <span className="icon">{skill.icon}</span>
                   <span className="name">{skill.name}</span>
-                </motion.li>
+                </li>
               ))}
             </ul>
           </motion.div>
