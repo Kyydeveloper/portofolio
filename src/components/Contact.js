@@ -4,56 +4,55 @@ import emailjs from "emailjs-com";
 import WhatsAppButton from "./Whatsap";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      message: message,
-      to_name: "Admin_website",
-    };
-
     emailjs
       .send(
-        "service_6o2x5jr",
-        "template_t05lkek",
-        templateParams,
-        "O5DsBHDIkk0tw33Ji"
+        "service_6o2x5jr", // Ganti dengan service ID kamu
+        "template_t05lkek", // Ganti dengan template ID kamu
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        "O5DsBHDIkk0tw33Ji" // Ganti dengan public key kamu
       )
-      .then((response) => {
+      .then(() => {
         alert("✅ Pesan berhasil dikirim!");
-        console.log("Sukses:", response);
-        setName("");
-        setEmail("");
-        setMessage("");
+        setForm({ name: "", email: "", message: "" });
       })
-      .catch((error) => {
-        alert("❌ Gagal mengirim pesan, coba lagi.");
-        console.error("Error:", error);
+      .catch((err) => {
+        console.error(err);
+        alert("❌ Gagal mengirim pesan.");
       });
   };
 
   return (
     <motion.section
       id="contact"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      className="contact"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
       <h1 className="section-title">Contact Me</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nama:</label>
           <input
             id="name"
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            name="name"
+            value={form.name}
+            onChange={handleChange}
             required
             placeholder="Masukkan nama Anda"
           />
@@ -63,30 +62,32 @@ function Contact() {
           <input
             id="email"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={form.email}
+            onChange={handleChange}
             required
             placeholder="Masukkan email Anda"
           />
         </div>
         <div>
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="message">Pesan:</label>
           <textarea
             id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
+            name="message"
             rows="5"
+            value={form.message}
+            onChange={handleChange}
+            required
             placeholder="Tulis pesan Anda di sini..."
-          ></textarea>
+          />
         </div>
-        <button className="send-btn" type="submit">
+        <button type="submit" className="send-btn">
           Kirim Pesan
         </button>
       </form>
 
       <WhatsAppButton
-        phoneNumber="6285211759216"
+        phoneNumber="6283142298339"
         message="Halo, Saya tertarik dengan layanan Anda!"
       />
     </motion.section>

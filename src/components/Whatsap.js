@@ -1,5 +1,3 @@
-import React from "react";
-
 const WhatsAppButton = ({ phoneNumber, message }) => {
   const encodedMessage = encodeURIComponent(message);
   const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -11,7 +9,7 @@ const WhatsAppButton = ({ phoneNumber, message }) => {
       rel="noopener noreferrer"
       className="whatsapp-button"
     >
-      <i className="fab fa-whatsapp text-3xl"></i>
+      <i className="fab fa-whatsapp"></i>
     </a>
   );
 };

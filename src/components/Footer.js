@@ -2,11 +2,13 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <p>© 2025 Kyy Development. All Rights Reserved.</p>
-      <p>
-        <a href="/contact">Contact</a>|<a href="/about">About</a>
-      </p>
+      <div className="footer-links">
+        <a href="#contact">Contact</a>
+        <span>|</span>
+        <a href="#about">About</a>
+      </div>
     </footer>
   );
 }
