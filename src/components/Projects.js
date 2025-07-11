@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 const projectList = [
   {
     title: "Aplikasi Kasir UMKM",
-    image: `${process.env.PUBLIC_URL}/project1.jpg`,
+    image: `${process.env.PUBLIC_URL}/umkm.png`,
     description:
       "Aplikasi kasir sederhana berbasis web untuk UMKM. Fitur: input barang, hitung otomatis, cetak struk.",
-    github: "https://github.com/Kyydeveloper/project-kasir",
-    demo: "#",
+    github: "https://github.com/Kyydeveloper/kasir-umkm",
+    demo: "https://kyydeveloper.github.io/kasir-umkm",
   },
   {
     title: "Landing Page React",
